@@ -12,11 +12,6 @@ import (
 
 const checkInterval = time.Second * 10
 
-var (
-	appName    = "__unknow__"
-	appVersion = ""
-)
-
 func init() {
 	if appName == "__unknow__" {
 		log.Fatalln("invalid exectuable: build flags error")
@@ -34,6 +29,10 @@ func main() {
 		showHelpAndExit()
 	}
 	pid := os.Args[1]
+	if debugEnv, found := os.LookupEnv("DEBUG"); found && debugEnv != "" {
+		enableDebugLogger()
+	}
+	initConfig()
 	_, err := strconv.Atoi(pid)
 	if err != nil {
 		log.Fatalln("invalid pid:", pid)
@@ -87,6 +86,7 @@ func doAction(pid string) error {
 	if err != nil {
 		if err == procNotExistError {
 			fileLogger.Printf("proc with pid %s is exited\n\n\n", pid)
+			debugln("jvm exited, stop monitor")
 			os.Exit(0)
 		}
 		return err
