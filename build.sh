@@ -13,7 +13,7 @@ gobuild() {
 	fi
 	target_dir=$DIST_DIR/$1/$2
 	rm -rf $target_dir
-	GOOS=$1 GOARCH=$2 go build -o $target_dir/${APP_NAME}${ext} ${FLAGS} \
+	GOOS=$1 GOARCH=$2 go build -o $target_dir/${APP_NAME}${ext} \
 	-ldflags \
 	"\
 	-X 'main.appName=${APP_NAME}' \

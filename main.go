@@ -29,7 +29,7 @@ func main() {
 		showHelpAndExit()
 	}
 	pid := os.Args[1]
-	if debugEnv, found := os.LookupEnv("DEBUG"); found && debugEnv != "" {
+	if debugEnv := os.Getenv("DEBUG"); debugEnv != "" {
 		enableDebugLogger()
 	}
 	initConfig()
