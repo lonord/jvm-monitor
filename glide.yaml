@@ -1,0 +1,5 @@
+package: github.com/lonord/jvm-monitor
+import:
+- package: github.com/shirou/gopsutil
+  subpackages:
+  - process

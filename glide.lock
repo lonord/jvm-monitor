@@ -1,0 +1,26 @@
+hash: d51870485e7400befe9028c859192a373960407dd869d7e4ed7732271a9986b2
+updated: 2018-10-02T15:15:41.15302+08:00
+imports:
+- name: github.com/go-ole/go-ole
+  version: 7a0fa49edf48165190530c675167e2f319a05268
+  subpackages:
+  - oleutil
+- name: github.com/shirou/gopsutil
+  version: 70a1b78fe69202d93d6718fc9e3a4d6f81edfd58
+  subpackages:
+  - cpu
+  - host
+  - internal/common
+  - mem
+  - net
+  - process
+- name: github.com/shirou/w32
+  version: bb4de0191aa41b5507caa14b0650cdbddcd9280b
+- name: github.com/StackExchange/wmi
+  version: b12b22c5341f0c26d88c4d66176330500e84db68
+- name: golang.org/x/sys
+  version: e4b3c5e9061176387e7cea65e4dc5853801f3fb7
+  subpackages:
+  - unix
+  - windows
+testImports: []
